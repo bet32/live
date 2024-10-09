@@ -1,248 +1,179 @@
-<!doctype html>
-<html onload="winw()">
-  <head onload="winl()">
-    <meta name="viewport" content="width=device-width,user-scalable=no">
-    <meta charset="utf-8">
-    <title>SPIN GAME</title>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	 
+	 <meta name="google-adsense-account" content="ca-pub-9617191770288474">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BET A.I</title>
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-      @import url('https://fonts.googleapis.com/css?family=Nunito');
-      html {
-        background: linear-gradient(90deg,#fff000 0%,#ff0000 100%);
-      }
-      body {
-        background: linear-gradient(90deg,#fff000 0%,#ff0000 100%);
-        background-repeat: no-repeat;
-      }
-      #yl, #yw, #pl {
-        color: green;
-        font-family: Raleway;
-        font-size: 35px;
-        text-align: center;
-        border-radius: 5px;
-        display: none; /* Hidden initially */
-        background: #FF3D00;
-      }
-      #pl {
-        color: red;
-        background: #7CB342;
-      }
-      #spin {
-        transform-origin: center;
-        z-index: 2;
-        position: absolute;
-        top: 300px;
-        left: 8px;
-        transform: translateZ(0px) rotate(-0.533286rad);
-        margin-top: 30px;
-        margin-left: 30%;
-      }
-      input {
-        border: 0;
-        font-family: Raleway;
-        background: transparent;
-        width: 150px;
-        font-size: 35px;
-        color: red;
-      }
-      .cne {
-        background: green;
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        margin: auto;
-        margin-top: 80px;
-      }
-      .cne::before {
-        content: ' ';
-        background: red;
-        margin: auto;
-        width: 540px;
-        height: 540px;
-        border-radius: 50%;
-      }
-      #sc1, #sc2, #sc3 {
-        font-family: Raleway;
-        font-size: 35px;
-        background: #004D40;
-        width: 100%;
-        box-shadow: 0px 10px 0px #aaa;
-      }
-      #pro {
-        background: #991;
-        width: 80%;
-        height: 25px;
-        margin-left: 78px;
-      }
-      #prog {
-        background: #f80;
-        width: 0;
-        height: 100%;
-        transition: .5s;
-      }
-      #ref {
-        background: #333;
-        color: white;
-        font-family: cursive;
-        position: absolute;
-        top: 55px;
-        left: 13px;
-        transition: 1.5s;
-      }
-      #ref:hover {
-        background: #D32F2F;
-      }
-      #sc1:active, #sc2:active, #sc3:active {
-        transform: translateY(1px);
-        box-shadow: 0px 7px 0px #aaa;
-      }
-      .nospin {
-        -webkit-animation: none 2s;
-        -moz-animation: none 2s;
-        -o-animation: none 2s;
-        animation: none 2s;
-      }
-      .nam {
-        text-align: center;
-        font-family: Nunito;
-        position: fixed;
-        font-size: 35px;
-        margin-left: 249px;
-      }
-      .spinAround {
-        -webkit-animation: spin 6.6s;
-        -moz-animation: spin 6.6s;
-        -o-animation: spin 6.6s;
-        animation: spin 6.6s;
-        -webkit-animation-timing-function: ease;
-        -moz-animation-timing-function: ease;
-        -o-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-iteration-count: 1;
-        -moz-animation-iteration-count: 1;
-        -o-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-direction: normal;
-        -moz-animation-direction: normal;
-        -o-animation-direction: normal;
-        animation-direction: normal;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        -o-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-      }
-      @-webkit-keyframes spin {
-        0% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 1px;
+            background-color: green; 
         }
-        90% {
-          -webkit-transform: rotate(3110deg);
-          transform: rotate(3110deg);
+
+        h1 {
+            color: #FFFFFF; /* White */
         }
-        95% {
-          -webkit-transform: rotate(3108deg);
-          transform: rotate(3108deg);
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #FFFFFF; /* White */
         }
-        100% {
-          -webkit-transform: rotate(3109deg);
-          transform: rotate(3109deg);
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 200px;
         }
-      }
-      /* Added bold style for the "Click here" text */
-      #winLink {
-        font-weight: bold;
-        text-align: center;
-        display: block;
-        font-size: 20px;
-        margin-top: 10px;
-      }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50; /* Green */
+            color: #FFFFFF; /* White */
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #555; /* Grey */
+            cursor: not-allowed;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #FFFFFF; /* White */
+        }
+		
+		 footer {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+		
     </style>
-  </head>
-  <body onload="fsc()">
-    <a href="https://bet32.github.io/live3/">
-      <div class="nam">BET</div>
-    </a>
-    SPIN TO WIN $10, $20, $50, $100
-    <br><br><br><br>
-    <div id="scrd">
-      <div id="sc1">
-        SCORE: <input value="00" type="text" id="scr" readonly><br>
-      </div>
-      <div id="sc2">
-        Spin-Left: <input value="2" type="text" id="chnl" readonly><br>
-      </div>
-      <div id="sc3">
-        POINT: <input type="text" id="scrf" readonly><br>
-      </div>
-    </div>
-    <br><br><br>
-    <div id="pro">
-      <div id="prog"></div>
-    </div><br>
-    <img id="spin" onclick="startSpin()" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Fidget_spinner_red%2C_cropped.jpg" spin alt="SPIN THE ROBOT" height="226" width="207">
-    <div id="yl">LOST</div><br>
-    <a href="https://bet32.github.io/live2/">
-      <div id="pl" onclick="ply()">PLAY AGAIN</div><br>
-    </a>
-    <div id="yw">WON</div>
-    <a id="winLink" href="https://chat.whatsapp.com/EQWq4QF37cN6ueXx8VwoAo " style="display:none">Click here</a> <!-- Added bold "Click here" link -->
-  </body>
+</head>
+<body>
+<marquee behavior="scroll" direction="left">
+ <B> <a href=' https://chat.whatsapp.com/LwmamHoSWvhJhDGk26TBG7  '> CLICK HERE TO WATCH OUR BET ODDS  </a> </B>
+  
+  
+</marquee>
+
+	
+    <h1>Enter Two Teams Playing And Get Bet Odds</h1>
+
+    <label for="team1">Enter Team 1:</label>
+    <input type="text" id="team1" placeholder="Team 1">
+
+    <br>
+
+    <label for="team2">Enter Team 2:</label>
+    <input type="text" id="team2" placeholder="Team 2">
+
+    <br>
+
+    <button onclick="suggestOutcome()">ROBOT BET ODDS</button>
+
+    <br>
+
+    <B id="result"></B>
+
+    <script>
+	
+	
+	
+
+        function suggestOutcome() {
+	
+		
+		
+		
+            var team1 = document.getElementById("team1").value;
+            var team2 = document.getElementById("team2").value;
+
+            if (team1.trim() === "" || team2.trim() === "") {
+                alert("Please enter both teams");
+                return;
+            }
+
+            var outcomes = ["HOME OR AWAY", " OVER 1.5", " UNDER 4.5", ];
+            var randomIndex = Math.floor(Math.random() * outcomes.length);
+            var suggestedOutcome = outcomes[randomIndex];
+			 var Team1 = Math.floor(Math.random() * 17) + 1;
+			 var Team2 = Math.floor(Math.random() * 13) + 1;
+			 var shotsOnTargetTeam1 = Math.floor(Math.random() * 5);
+			 var shotsOnTargetTeam2 = Math.floor(Math.random() * 4);
+
+			
+			 var result = 
+                   'Shots Attempt: ' + team1 + ' ' + Team1 + ' - ' + Team2 + ' ' + team2 + '<br>' +
+                   'Shots On Target: ' + team1 + ' ' + shotsOnTargetTeam1 + ' - ' + shotsOnTargetTeam2 + ' ' + team2;
+			
+			
+			document.getElementById("result").innerHTML = "BET ODDS: " + suggestedOutcome + "<br><p> <a href='https://bet32.github.io/live3/  '> CLICK HERE TO CHECK ANOTHER MATCH  </a>  <br><p> <a href='https://www.youtube.com/watch?v=QG3YI-o2OYs '> CLICK HERE FOR OUR BET ODDS   </a>  <br> <p>"  + result;
+
+			
+		
+
+            // Disable the button after it is clicked
+            document.querySelector('button').disabled = true;
+        }
+		
+		
+		
+		
+		
+		
+    </script>
+	
+<p> <br> <p> <br> <p> <br> <p>
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  <footer>
+    
+	
+	<p>EMAIL:      newsandgame2021@gmail.com</p>
+    <p>SERVICE:    FOOTBALL ARTIFICIAL INTELLIGENCE </p>
+    <p>ABOUT US:   BET-ROBOT  IS AN ONLINE TECHNOLOGY COMPANY  <br>THAT BUILDS FOOTBALL ARTIFICIAL INTELLIGENCE</p>
+  </footer>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
 </html>
-
-<script language="javascript" type="text/javascript">
-var cnt = 3;
-
-function startSpin() {
-    var e = document.getElementById("spin");
-    e.className = "spinAround";
-    cnt = cnt - 1;
-    document.getElementById("chnl").value = cnt;
-    setTimeout(function () {
-        document.getElementById("spin").className = "nospin";
-        document.getElementById("scr").value = parseInt(document.getElementById("scr").value) + parseInt(Math.floor(Math.random() * 15 + 1));
-    }, 6500);
-}
-
-function fsc() {
-    var t = document.getElementById("scrf");
-    t.value = Math.floor(Math.random() * 30 + 1);
-}
-
-setInterval(winl, 10);
-function winl() {
-    if (cnt == 0) { // Only show "Play again" when the user has no spins left
-        document.getElementById("pl").style.display = "block";
-        document.getElementById("yl").style.display = "block";
-        document.getElementById("spin").style.display = "none";
-    }
-}
-
-setInterval(winw, 50);
-function winw() {
-    if (parseInt(document.getElementById("scr").value) == parseInt(document.getElementById("scrf").value)) {
-        document.getElementById("yw").style.display = "block"; // Show "WON"
-        document.getElementById("spin").style.display = "none"; // Hide the spinner
-        document.getElementById("winLink").style.display = "block"; // Show "Click here" link in bold
-        document.getElementById("pl").style.display = "none"; // Hide "Play again"
-        document.getElementById("yl").style.display = "none"; // Hide "LOST" text when won
-    }
-}
-
-function ply() {
-    document.getElementById("scr").value = 1;
-    var tt = document.getElementById("scrf");
-    tt.value = Math.floor(Math.random() * 0 + 0);
-    cnt = 2;
-    document.getElementById("yw").style.display = "none";
-    document.getElementById("yl").style.display = "none";
-    document.getElementById("chnl").value = cnt;
-    document.getElementById("spin").style.display = "block";
-    document.getElementById("pl").style.display = "none";
-}
-
-setInterval(pr, 50);
-function pr() {
-    document.getElementById("prog").style.width = (parseInt(document.getElementById("scr").value) / parseInt(document.getElementById("scrf").value) * 100) + "%";
-}
-</script>
