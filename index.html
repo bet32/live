@@ -1,138 +1,336 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BET A.I</title>
+    <title>Alpha Abacus Training</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+        }
+        #cover-page {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,255,0.5)), url('pic15.jpg.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             text-align: center;
-            margin-top: 1px;
-            background-color: green; 
         }
-
-        h1 {
-            color: #FFFFFF; /* White */
-        }
-
-        label {
-            display: block;
-            margin: 10px 0;
-            color: #FFFFFF; /* White */
-        }
-
-        input {
-            padding: 8px;
-            margin-bottom: 10px;
-            width: 200px;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #4CAF50; /* Green */
-            color: #FFFFFF; /* White */
-            border: none;
-            cursor: pointer;
-        }
-
-        button:disabled {
-            background-color: #555; /* Grey */
-            cursor: not-allowed;
-        }
-
-        h2 {
-            margin-top: 20px;
-            color: #FFFFFF; /* White */
-        }
-		
-        footer {
-            background-color: black;
+        #cover-page h1 {
             color: white;
-            padding: 20px;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: auto;
+        }
+        .apply-button, .visit-button {
+            padding: 10px 20px;
             text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+            background-color: transparent;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .apply-button:hover, .visit-button:hover {
+            color: white;
+            background-color: #4CAF50;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4CAF50;
+            transition: width 0.3s ease;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        .subtitle {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .advertisement-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+        .moving-text {
+            animation: moveText 20s linear infinite;
+            font-size: 2rem;
+            white-space: nowrap;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @keyframes moveText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        #main-website {
+            display: none;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .hero-section {
+            height: 100vh; /* Adjust as needed */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+        }
+        .hero-content p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .hero-content .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .about-section, .courses-section, .benefits-section, .testimonials-section, .gallery-section, .contact-section {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .course-card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .cookie-consent button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
+    <script>
+        function showMainWebsite() {
+            document.getElementById('cover-page').style.display = 'none';
+            document.getElementById('main-website').style.display = 'block';
+        }
+        function acceptCookies() {
+            document.getElementById('cookie-consent').style.display = 'none';
+        }
+        function declineCookies() {
+            document.getElementById('cookie-consent').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
-<marquee behavior="scroll" direction="left">
-    <B><a href=' https://www.youtube.com/channel/UC_qZl6QcJeCuD5aJY0m96EA  '> CLICK HERE TO SUBSCRIBE FOR FIXED GAMES   </a></B>
-</marquee>
+    <div id="cover-page">
+        <nav>
+            <ul>
+                <li><a href="about.html" target="_blank">About Us</a></li>
+                <li><a href="courses.html" target="_blank">Courses</a></li>
+                <li><a href="schedule.html" target="_blank">Class Schedule</a></li>
+                <li><a href="pricing.html" target="_blank">Pricing</a></li>
+                <li><a href="contact.html" target="_blank">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Alpha Abacus</h1>
+        <p class="subtitle">Unlock Your Potential with Every Calculation</p>
+        <div class="advertisement-bar">
+            <div class="moving-text">Thank you for being a part of Alpha Abacus</div>
+        </div>
+        <div class="button-container">
+            <button class="apply-button">Apply Now</button>
+            <button class="visit-button" onclick="showMainWebsite()">Visit Us</button>
+        </div>
+    </div>
 
-<h1>Enter Two Teams Playing And Get Bet Odds</h1>
+    <div id="main-website">
+        <header>
+            <div class="cookie-consent" id="cookie-consent">
+                <p>We use cookies to improve your browsing experience and provide personalized content. By using our site, you agree to our use of cookies.</p>
+                <button onclick="acceptCookies()">I Agree</button>
+                <button onclick="declineCookies()">Decline</button>
+            </div>
+            <div class="header-content">
+                <img src="logo.png" alt="Alpha Abacus Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Benefits</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-<label for="team1">Enter Team 1:</label>
-<input type="text" id="team1" placeholder="Team 1">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome to Alpha Abacus Training Academy</h1>
+                <p>Empowering Minds Through Abacus Learning</p>
+                <a href="#" class="btn">Join Us Today</a>
+            </div>
+        </div>
 
-<br>
+        <section class="about-section section">
+            <h2>About Us</h2>
+            <p>Alpha Abacus Training Academy is committed to providing high-quality abacus education to children, fostering their cognitive development and mathematical skills.</p>
+        </section>
 
-<label for="team2">Enter Team 2:</label>
-<input type="text" id="team2" placeholder="Team 2">
+        <section class="courses-section section">
+            <h2>Our Courses</h2>
+            <div class="course-card">
+                <h3>Basic Abacus</h3>
+                <p>Introduction to abacus, focusing on fundamental techniques and basic arithmetic operations.</p>
+            </div>
+            <div class="course-card">
+                <h3>Intermediate Abacus</h3>
+                <p>Building on the basics, this course covers more complex calculations and abacus techniques.</p>
+            </div>
+            <div class="course-card">
+                <h3>Advanced Abacus</h3>
+                <p>Advanced techniques for quick and accurate mental calculations, preparing students for competitions.</p>
+            </div>
+        </section>
 
-<br>
+        <section class="benefits-section section">
+            <h2>Benefits of Abacus Learning</h2>
+            <ul>
+                <li>Improves concentration and memory</li>
+                <li>Enhances problem-solving skills</li>
+                <li>Boosts confidence and self-esteem</li>
+                <li>Develops a love for mathematics</li>
+            </ul>
+        </section>
 
-<button onclick="suggestOutcome()">ROBOT BET ODDS</button>
+        <section class="testimonials-section section">
+            <h2>Testimonials</h2>
+            <p>"Alpha Abacus has transformed my child's attitude towards math. He now loves solving problems and has become more confident." - Parent</p>
+            <p>"The abacus training has improved my daughter's concentration and mental agility. Highly recommend!" - Parent</p>
+        </section>
 
-<br>
+        <section class="gallery-section section">
+            <h2>Gallery</h2>
+            <p>Check out photos from our recent classes and events.</p>
+        </section>
 
-<B id="result"></B>
+        <section class="contact-section section">
+            <h2>Contact Us</h2>
+            <p>For more information about our courses and enrollment, please get in touch with us at:</p>
+            <p>Email: info@alphaabacus.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </section>
 
-<script>
-    function suggestOutcome() {
-        var team1 = document.getElementById("team1").value.toLowerCase();
-        var team2 = document.getElementById("team2").value.toLowerCase();
-
-        if (team1.trim() === "" || team2.trim() === "") {
-            alert("Please enter both teams");
-            return;
-        }
-
-        var outcomes = ["HOME OR AWAY", "OVER 1.5", "1ST HALF UNDER 2.5"];
-        var randomIndex = Math.floor(Math.random() * outcomes.length);
-        var suggestedOutcome = outcomes[randomIndex];
-        var Team1 = Math.floor(Math.random() * 17) + 1;
-        var Team2 = Math.floor(Math.random() * 13) + 1;
-        var shotsOnTargetTeam1 = Math.floor(Math.random() * 5);
-        var shotsOnTargetTeam2 = Math.floor(Math.random() * 4);
-
-        var result = 'Shots Attempt: ' + team1 + ' ' + Team1 + ' - ' + Team2 + ' ' + team2 + '<br>' +
-                     'Shots On Target: ' + team1 + ' ' + shotsOnTargetTeam1 + ' - ' + shotsOnTargetTeam2 + ' ' + team2;
-
-        if (team1 === "liverpool" ) {
-            result = " (Liverpool): Alisson, Trent,Robertson, Van Dijk, Konate, Endo, Mac Allister, Szoboszlai, Nunez,Diaz,Salah<br><p>" +
-					result;
-        }
-
-		 if (team2 === "liverpool" ) {
-            result = " (Liverpool): Alisson, Trent,Robertson, Van Dijk, Konate, Endo, Mac Allister, Szoboszlai, Nunez,Diaz,Salah<br><p>" +
-					result;
-        }
-
-		
-		
-		
-		
-        document.getElementById("result").innerHTML = "BET ODDS: " + suggestedOutcome + 
-            "<br><p><a href=' https://bet32.github.io/live/ '> CLICK HERE TO CHECK ANOTHER MATCH </a><br>" +
-            "<p><a href='https://www.youtube.com/channel/UC_qZl6QcJeCuD5aJY0m96EA '> CLICK HERE TO SUBSCRIBE FOR FIXED GAMES </a><br>" +
-
-			  "<br> LINE UPS COMING UP <br><p>" + 
-			result;
-
-		
-			
-        // Disable the button after it is clicked
-        document.querySelector('button').disabled = true;
-    }
-</script>
-
-<p><br><p><br><p><br><p>
-
-<footer>
-    <p>EMAIL: newsandgame2021@gmail.com</p>
-    <p>SERVICE: FOOTBALL ARTIFICIAL INTELLIGENCE</p>
-    <p>ABOUT US: BET-ROBOT IS AN ONLINE TECHNOLOGY COMPANY <br>THAT BUILDS FOOTBALL ARTIFICIAL INTELLIGENCE</p>
-</footer>
+        <footer>
+            <p>&copy; 2023 Alpha Abacus Training Academy. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
