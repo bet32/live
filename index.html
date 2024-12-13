@@ -1,41 +1,36 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	 
-	 <meta name="google-adsense-account" content="ca-pub-9617191770288474">
-
-
-
+  <meta name="google-adsense-account" content="ca-pub-9617191770288474">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KRAMPAH</title>
   <style>
     body {
-      background-color: black; /* Set background color to white */
-	  background-image: url('https://cdna.lystit.com/520/650/n/photos/footlocker/f1cd9fcb/nike-Black-Air-Max-Schoenen.jpeg     ');
+      background-color: black;
+      background-image: url('https://cdna.lystit.com/520/650/n/photos/footlocker/f1cd9fcb/nike-Black-Air-Max-Schoenen.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-	  
-	
-	  
-	  
-	  
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     .container {
       max-width: 1600px;
       margin: 50px auto;
       text-align: center;
       display: flex;
-      flex-direction: column; /* Align items vertically */
-      align-items: center; /* Center items horizontally */
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
     }
     button {
-      padding: 10px 150px; /* Adjusted padding */
-      font-size: 20px; /* Increased font size */
+      padding: 10px 150px;
+      font-size: 20px;
       margin: 10px;
       cursor: pointer;
       background-color: black;
@@ -43,9 +38,9 @@
       border: none;
       border-radius: 5px;
       transition: background-color 0.3s;
-      white-space: nowrap; /* Prevent text wrapping */
-      overflow: hidden; /* Hide overflow text */
-      text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     button:hover {
       background-color: #f25b00;
@@ -55,94 +50,64 @@
       color: white;
       padding: 20px;
       text-align: center;
+      margin-top: auto;
     }
-	
-	
-	
-	
-	
-
-  .blog-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-  }
-	
-	
-	
-.sale_banner_orange {
-		background:#f25b00;
-		background: -moz-linear-gradient(top, #f49300 0%, #f25b00 100%);
-		background: -webkit-linear-gradient(top, #f49300 0%,#f25b00 100%);
-		background: linear-gradient(to bottom, #f49300 0%,#f25b00 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f49300', endColorstr='#f25b00',GradientType=0 );
-		border-top: 1px solid #eee;
-		border-bottom: 1px solid #eee;
-		color: #c8c8c8;
-		text-align: center;
-		font: bold 16px/36px sans-serif;
-		height: 36px;
-	}
-
-	.sale_banner_orange a {
-		display: block;
-		color:#fff;
-		text-decoration: none;
-	}	
-	
-	
-	
-	
-	
-	
-	
+    .sale_banner_orange {
+      background: linear-gradient(to bottom, #f49300 0%, #f25b00 100%);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      color: #c8c8c8;
+      text-align: center;
+      font: bold 16px/36px sans-serif;
+      height: 36px;
+    }
+    .sale_banner_orange a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
 <div class="sale_banner_orange" style="border-top:none">
-			<a href=" " target="_blank">
-			KRAMPAH.COM
-	</a>
+  <a href=" " target="_blank">KRAMPAH.COM</a>
 </div>
 
+<div class="container">
+  <button onclick="goToWebsite('https://krampah.com/women.html')">WOMEN FASHION STYLES</button>
+  <button onclick="goToWebsite('https://krampah.com/men.html')">MEN FASHION STYLES</button>
+  <button onclick="goToWebsite('https://krampah.com/kente.html')">KENTE BRIDE STYLES - WOMEN</button>
+  <button onclick="goToWebsite('https://krampah.com/couple.html')">FASHION STYLE FOR COUPLE</button>
+</div>
 
-  <div class="container">
-   
-	<button onclick="goToWebsite('https://krampah.com/women.html  ')">WOMEN FASHION STYLES  </button>
-	<button onclick="goToWebsite('https://krampah.com/men.html  ')">MEN FASHION STYLES</button>
-	<button onclick="goToWebsite('https://krampah.com/kente.html  ')">KENTE BRIDE STYLES - WOMEN  </button>
-    <button onclick="goToWebsite('https://krampah.com/couple.html  ')">FASHION STYLE FOR COUPLE </button>
-   
+<footer>
+  <p>Contact: info@krampah.com</p>
+  <p>Services: Fashion And Technology</p>
+  <p>About Us: Krampah.com is an Internet company that connects people to fashion designers in every location around the world</p>
+  <p>&copy; 2025 Krampah.com All rights reserved.</p>
+</footer>
 
-  
-   </div>
-  
-	
-  <footer>
-  
-	<p>Contact: info@krampah.com</p>
-    <p>Services: Fashion And Technology </p>
-    <p>About Us: Krampah.com is an Internet company that connects people to fashion designers in every location around the world</p>
-  </footer>
+<script>
+  function goToWebsite(url) {
+    window.location.href = url;
+  }
 
-  
-  
-        <footer>
-            <p>&copy; 2025 Krampah.com All rights reserved.</p>
-        </footer>
-  
-  
-  
-  
-  
-  
-  
-  <script>
-    function goToWebsite(url) {
-      window.location.href = url;
-    }
-   
-  </script>
+  const images = [
+    'https://cdna.lystit.com/520/650/n/photos/footlocker/f1cd9fcb/nike-Black-Air-Max-Schoenen.jpeg',
+    ' https://media.gq-magazine.co.uk/photos/633eab4246e9ddeb400c0d5e/16:9/w_1280,c_limit/Nike-air-max.jpg  ',
+    ' https://tonaton.com/r/cGljdHVyZXMtZ2hhbmEuamlqaXN0YXRpYy5uZXQ/41055699_NjIwLTYyMC1lNGJmZTgzNDk1.webp   '
+  ];
+
+  let currentIndex = 0;
+
+  function changeBackground() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+  }
+
+  setInterval(changeBackground, 3000);
+</script>
+
 </body>
 </html>
